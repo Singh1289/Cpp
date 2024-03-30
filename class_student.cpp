@@ -1,11 +1,20 @@
+// class student with auto increment function with global variable.
+
 #include <iostream>
 using namespace std;
+
+int GR = 1;
 
 class student
 {
     int rno, mk1, mk2, mk3, total;
     char grade;
     string name;
+    void Grno()
+    {
+        rno = GR;
+        GR = GR + 1;
+    }
 
 public:
     student()
@@ -14,25 +23,29 @@ public:
         mk1 = 0;
         mk2 = 0;
         mk3 = 0;
-        total = 0;
-        grade = 'y';
         name = "NULL";
     }
     student(int R, int a, int b, int c, string x)
     {
-        rno = R;
+        Grno();
         mk1 = a;
         mk2 = b;
         mk3 = c;
-        total = (a + b + c);
         name = x;
-        grade = 'Y';
-
-
-
-
     }
-    void setrno(int a) { rno = a; }
+    student(string x, int a, int b, int c)
+    {
+        Grno();
+        mk1 = a;
+        mk2 = b;
+        mk3 = c;
+        name = x;
+    }
+    void setrno(int a)
+    {
+        rno = a;
+    }
+
     void setmk1(int a) { mk1 = a; }
     void setmk2(int a) { mk2 = a; }
     void setmk3(int a) { mk3 = a; }
@@ -87,31 +100,31 @@ public:
     }
     void display()
     {
-        cout<<"\nName             : "<<getname();
-        cout<<"\nRoll No.         : "<<getrno();
-        cout<<"\n1st subject marks: "<<getmk1();
-        cout<<"\n2nd subject marks: "<<getmk2();
-        cout<<"\n3rd subject marks: "<<getmk3();
-        cout<<"\nTotal  marks     : "<<gettotal();
-        cout<<"\nGrade            : "<<getgrade();
+        cout << "\nName             : " << getname();
+        cout << "\nRoll No.         : " << getrno();
+        cout << "\n1st subject marks: " << getmk1();
+        cout << "\n2nd subject marks: " << getmk2();
+        cout << "\n3rd subject marks: " << getmk3();
+        cout << "\nTotal  marks     : " << gettotal();
+        cout << "\nGrade            : " << getgrade();
     }
-    ~student() { cout << "\n~ Thank you ~" ;}
+    ~student() { cout << "\n~ Thank you ~"; }
 };
 
 int main()
 {
-    student s1,s3;
-    student s2(1,67,87,65,"John");
+    student s1("XYZ", 45, 56, 67), s3("ABC", 78, 67, 89);
+    student s2(1, 67, 87, 65, "John");
     s3.setrno(2);
     s3.setmk1(89);
     s3.setmk2(88);
     s3.setmk3(91);
     s3.setname("RAJ");
     s1.display();
-    cout<<"\n";
+    cout << "\n";
     s2.display();
-    cout<<"\n";
+    cout << "\n";
     s3.display();
-    cout<<"\n";
+    cout << "\n";
     return 0;
 }
