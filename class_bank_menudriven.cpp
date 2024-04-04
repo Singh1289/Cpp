@@ -2,6 +2,7 @@
 
 #include <iostream>
 using namespace std;
+int G_acc = 11001;
 
 class BankAcc
 {
@@ -9,6 +10,12 @@ class BankAcc
     int Acc_no;
     string name;
     string type;
+
+    void auto_acc()
+    {
+        Acc_no = G_acc;
+        G_acc = G_acc + 1;
+    }
 
 public:
     BankAcc()
@@ -18,13 +25,13 @@ public:
         Acc_no = 0;
         balance = 0;
     }
-    BankAcc(int B, int A, string N, string T)
-    {
-        name = N;
-        type = T;
-        Acc_no = A;
-        balance = B;
-    }
+    // BankAcc(int B,int A, string N, string T)
+    // {
+    //     name = N;
+    //     type = T;
+    //     Acc_no = A;
+    //     balance = B;
+    // }
     void display()
     {
         cout << "\n Name         : " << name;
@@ -36,7 +43,6 @@ public:
     void viewbalance()
     {
         cout << "\n  Name   : " << name;
-
         cout << "\n Balance : " << balance;
     }
     void withdraw(int a)
@@ -55,16 +61,21 @@ public:
         balance = balance + a;
     }
 
-    void init(int A, int B, string N, string T)
+    void init(int B, string N, string T)
     {
         name = N;
         type = T;
-        Acc_no = A;
+        auto_acc();
         balance = B;
     }
     int get_acc()
     {
         return Acc_no;
+    }
+
+    int get_bal()
+    {
+        return balance;
     }
     // ~BankAcc()
     // {
@@ -105,12 +116,11 @@ int main()
                 }
                 cout << "\nEnter a valid input.";
             }
-            cout << "\nEnter Acc no.   : ";
-            cin >> acc;
             cout << "\nOpening balance : ";
             cin >> bal;
-            cust[count].init(acc, bal, nam, ty);
+            cust[count].init(bal, nam, ty);
             cout << "\nAccount created successfully..!!\n";
+            cout << "\n Account number is : " << cust[count].get_acc();
             count++;
             break;
         case 2:
@@ -123,11 +133,10 @@ int main()
                     cust[i].viewbalance();
                     break;
                 }
-                else
-                {
-                    cout << "\n No such account..!!";
-                    break;
-                }
+            }
+            if (i == 10)
+            {
+                cout << "\n No such account..!!";
             }
             break;
         case 3:
@@ -140,13 +149,13 @@ int main()
                     cout << "\nEnter amount to be deposit : ";
                     cin >> bal;
                     cust[i].deposit(bal);
+                    cout << "\nDeposited successfully..!!\n";
                     break;
                 }
-                else
-                {
-                    cout << "\n No such account..!!";
-                    break;
-                }
+            }
+            if (i == 10)
+            {
+                cout << "\n No such account..!!";
             }
             break;
         case 4:
@@ -157,18 +166,25 @@ int main()
                 if ((cust[i].get_acc()) == key)
                 {
                     cout << "\nEnter amount to be withdraw : ";
-                    cin >> bal;
-                    cust[i].withdraw(bal);
-                    break;
-                }
-                else
-                {
-                    cout << "\n No such account..!!";
-                    break;
+                    cin >> key;
+                    if (key <= (cust[i].get_bal()))
+                    {
+                        cust[i].withdraw(bal);
+                        cout << "\nTransaction successful..!!\n";
+                        break;
+                    }
+                    else
+                    {
+                        cout << "\n Insufficient balance..!!";
+                        break;
+                    }
                 }
             }
+            if (i == 10)
+            {
+                cout << "\n No such account..!!";
+            }
             break;
-
         case 5:
             cout << "\n Enter acc no. : ";
             cin >> key;
@@ -179,11 +195,10 @@ int main()
                     cust[i].display();
                     break;
                 }
-                else
-                {
-                    cout << "\n No such account..!!";
-                    break;
-                }
+            }
+            if (i == 10)
+            {
+                cout << "\n No such account..!!";
             }
             break;
         case 6:
