@@ -9,8 +9,10 @@ int main()
         cout << "\n";
         // if (i  1)
         // {
+
         for (j = 1; j <= ((2 * i) - 2); j++)
             cout << " ";
+
         // }
         for (j = 5; j >= (2 * i - 1); j--)
             cout << "* ";
@@ -23,7 +25,7 @@ int main()
         // if (i > 1)
         //  {
         for (j = ((2 * i) - 2); j >= 1; j--)
-            cout << " ";
+            cout << ".";
         // }
         for (j = 5; j >= (2 * i - 1); j--)
             cout << "* ";
