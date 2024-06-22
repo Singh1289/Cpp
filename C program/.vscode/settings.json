@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "stdio.h": "c",
+    "typeinfo": "c",
+    "iostream": "cpp",
+    "random": "cpp",
+    "*.tcc": "cpp",
+    "limits": "cpp",
+    "type_traits": "cpp"
+  }
+}
