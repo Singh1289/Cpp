@@ -10,7 +10,9 @@ class item
 public:
     item()
     {
-        strcpy(itemcode, "abc");
+        strcpy(itemcode, "abc");]
+
+        
         strcpy(itemname, "hello");
         rate = 10;
     }
