@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1720584775 source:d:\infoway\cpp\employee\employee.cpp
+	<iostream>
+	<string.h>
+	"Employee.h"
+
+1720584830 d:\infoway\cpp\employee\employee.h
+
+1720584775 source:d:\infoway\cpp\employee\clerk.cpp
+	<iostream>
+	<string.h>
+	"Clerk.h"
+
+1720549827 d:\infoway\cpp\employee\clerk.h
+	"Employee.h"
+
+1720583308 source:d:\infoway\cpp\employee\main.cpp
+	<iostream>
+	<string.h>
+	"Clerk.h"
+	"Manager.h"
+	"Employee.h"
+
+1720585497 d:\infoway\cpp\employee\manager.h
+	"Employee.h"
+
+1720585365 source:d:\infoway\cpp\employee\manager.cpp
+	<iostream>
+	<string.h>
+	"Manager.h"
+
+1720584773 source:d:\infoway\cpp\employee\salesmanager.cpp
+	<iostream>
+	<string.h>
+	"SalesManager.h"
+
+1720585534 d:\infoway\cpp\employee\salesmanager.h
+	"Manager.h"
+

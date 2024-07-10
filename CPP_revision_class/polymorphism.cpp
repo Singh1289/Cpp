@@ -7,7 +7,7 @@ protected:
     int empno;
     string name;
     float bsal;
-        
+
 public:
     employee1()
     {
@@ -61,8 +61,13 @@ public:
 
 int main()
 {
-    employee1 *e = new manager(10, "Pooja", 4500, 500);
-    cout << " \n Salary = " << e->cal_netSal();
+    /* employee1 *e = new manager(10, "Pooja", 4500, 500);
+     cout << " \n Salary = " << e->cal_netSal();
+    */
+    int x = 10;
+    int &a = x;
+    int *p = &a;
+    cout << "\n value is : " << *p;
 
     return 0;
 }

@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1720518201 source:d:\batchmarch2024\cppdemoproject\emp.cpp
+	<string.h>
+	<iostream>
+	"emp.h"
+
+1720520549 d:\batchmarch2024\cppdemoproject\emp.h
+
+1720519414 source:d:\batchmarch2024\cppdemoproject\clerk.cpp
+	<iostream>
+	"clerk.h"
+	<string.h>
+
+1720519838 d:\batchmarch2024\cppdemoproject\clerk.h
+	"emp.h"
+
+1720519941 source:d:\batchmarch2024\cppdemoproject\manager.cpp
+	"manager.h"
+	<iostream>
+
+1720519941 d:\batchmarch2024\cppdemoproject\manager.h
+	"emp.h"
+
+1720520043 source:d:\batchmarch2024\cppdemoproject\main.cpp
+	"emp.h"
+	"clerk.h"
+	"manager.h"
+	<iostream>
+
+1720520550 source:d:\infoway\cpp\cppdemoproject\clerk.cpp
+	<iostream>
+	"clerk.h"
+	<string.h>
+
+1720521112 d:\infoway\cpp\cppdemoproject\clerk.h
+	"emp.h"
+
+1720520550 d:\infoway\cpp\cppdemoproject\emp.h
+
+1720518202 source:d:\infoway\cpp\cppdemoproject\emp.cpp
+	<string.h>
+	<iostream>
+	"emp.h"
+
+1720520548 source:d:\infoway\cpp\cppdemoproject\manager.cpp
+	"manager.h"
+	<iostream>
+
+1720519942 d:\infoway\cpp\cppdemoproject\manager.h
+	"emp.h"
+

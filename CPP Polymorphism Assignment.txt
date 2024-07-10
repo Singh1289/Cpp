@@ -1,0 +1,51 @@
+
+1. Write an inheritance/polymorphism structure of Animal class to support below main function:
+
+int main()
+{	
+	Animal *animal = new Animal();  //This line should give compile time error "Cant create object of abstract class" 
+	
+	//My Dog name is Boss & age is 15 months
+	Animal *dogPtr = new Dog("Boss", 15);
+	dogPtr->talk(); //Every animal has unique way of sound
+	delete dogPtr;
+
+	//My cat name is Puppy & she is 3 month old and it is-a Animal
+	Cat c1("Puppy", 3);
+	Cat c2("Sweety", 4);
+	
+	//Use strcmp function to to compare names of 2 Cat
+	if(c1 == c2)  
+		cout<<"Both are same!"<<endl;
+	else
+		cout<<"Both are different!"<<endl;
+		
+	c1.talk();
+}
+
+2. Write an inheritance/polymorphism class structure for Shape class to support below main function:
+
+int main()
+{
+	//This line should give compile time error like "Cant create object of abstract class" as we can't draw Shape. 
+	Shape *shape = new Shape();
+		
+	//My Triangle's width is 10 & height is 3 
+	Shape *triangleShape = new Triangle(10, 3);
+	
+	//Triangle's area formula is (width * height)/2 
+	triangleShape->getArea();
+	
+	delete triangleShape;
+
+	//My Circle's centre is at 2,2 (x,y) and radius of 3 and it is-a Shape
+	Circle c1(2,2,3);
+	Circle c2(3,3,8);
+	
+	//Please check both circles areas to verify whether they are equal or not
+	//Circle's area formula is (3.14 * radius * radius)
+	if(c1 == c2)
+		cout<<"Both circle are of same area"<<endl;
+	else
+		cout<<"Both circle are of different area"<<endl;	
+}
