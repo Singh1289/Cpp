@@ -17,7 +17,8 @@ int main()
    e->~Employee();
 
    cout<<"\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
-   Manager *e1 = new SalesManager(1,"abhi",25000.00f,1500,60000);
+   Employee *e1 = new SalesManager(1,"harsh",2500.00f,150,50000);
+// Manager *e1 = new SalesManager(1,"abhi",25000.00f,1500,60000);
    cout<<"\n salesManager Com : "<<e1->totalSalesCom();
    cout<<"\n salesManager Salary : "<<e1->CalSalary();
 
