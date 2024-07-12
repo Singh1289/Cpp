@@ -26,4 +26,6 @@ int max(int x, int y, int z)
         return y;
     else
         return z;
+
+    // return ((x > y) && (x > z))? x: (y>z)? y:z;
 }
